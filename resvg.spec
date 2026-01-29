@@ -5,7 +5,7 @@
 Summary:	SVG rendering library
 Name:		resvg
 Version:	0.46.0
-Release:	1
+Release:	2
 License:	Apache v2.0 or MIT
 Group:		Libraries
 Source0:	https://github.com/linebender/resvg/releases/download/v%{version}/%{name}-%{version}.tar.xz
@@ -26,7 +26,7 @@ SVG rendering library.
 %package devel
 Summary:	Header files for resvg library
 Group:		Development/Libraries
-Requires:	%{name}-devel%{?_isa} = %{version}-%{release}
+Requires:	%{name}%{?_isa} = %{version}-%{release}
 
 %description devel
 Header files for resvg library.
