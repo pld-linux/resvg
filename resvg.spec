@@ -4,12 +4,12 @@
 
 Summary:	SVG rendering library
 Name:		resvg
-Version:	0.46.0
-Release:	2
+Version:	0.47.0
+Release:	1
 License:	Apache v2.0 or MIT
 Group:		Libraries
 Source0:	https://github.com/linebender/resvg/releases/download/v%{version}/%{name}-%{version}.tar.xz
-# Source0-md5:	d0eabbbb3a23343009a43684f3a1223d
+# Source0-md5:	60b8ce21846f8da7f3116fe04017705c
 URL:		https://github.com/linebender/resvg
 BuildRequires:	cargo
 BuildRequires:	rpmbuild(macros) >= 2.050
@@ -41,11 +41,6 @@ Static resvg library.
 
 %prep
 %setup -q
-
-# https://github.com/linebender/resvg/issues/1006
-find vendor -name .cargo-checksum.json | \
-	xargs grep -l 'gitignore' | \
-	xargs sed -i -e 's@"\([^"]*/\)\?\.gitignore"[^,]*,@@g'
 
 %build
 %cargo_build --frozen -p resvg-capi
